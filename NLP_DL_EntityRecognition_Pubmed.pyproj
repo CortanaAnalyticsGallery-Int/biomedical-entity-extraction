@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27aee1c8-7e1d-471f-bfd4-1d40d79023a5}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>Code\02_Modeling\02_ModelCreation\3_Train_Neural_Entity_Extractor_GPU.py</StartupFile>
+    <SearchPath>Code\02_Modeling\02_ModelCreation</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>Global|VisualStudio|Python 3.5</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="aml_config\jupyter_notebook_config.py" />
+    <Compile Include="Code\01_Data_Acquisition_and_Understanding\1_Download_and_Parse_XML_Spark.py" />
+    <Compile Include="Code\01_Data_Acquisition_and_Understanding\pubmed_parser\medline_parser.py" />
+    <Compile Include="Code\01_Data_Acquisition_and_Understanding\pubmed_parser\pubmed_oa_parser.py" />
+    <Compile Include="Code\01_Data_Acquisition_and_Understanding\pubmed_parser\pubmed_web_parser.py" />
+    <Compile Include="Code\01_Data_Acquisition_and_Understanding\pubmed_parser\utils.py" />
+    <Compile Include="Code\01_Data_Acquisition_and_Understanding\pubmed_parser\__init__.py" />
+    <Compile Include="Code\02_Modeling\01_FeatureEngineering\2_Train_Word2Vec_Model_Spark.py" />
+    <Compile Include="Code\02_Modeling\02_ModelCreation\3_Train_Neural_Entity_Extractor_GPU.py" />
+    <Compile Include="Code\02_Modeling\02_ModelCreation\DataReader.py" />
+    <Compile Include="Code\02_Modeling\02_ModelCreation\EntityExtractor.py" />
+    <Compile Include="Code\02_Modeling\03_ModelEvaluation\4_a_Test_the_Trained_Neural_Entity_Extractor_Model.py" />
+    <Compile Include="Code\02_Modeling\03_ModelEvaluation\4_b_Test_Model_trained_on_Google_News_Embeddings.py" />
+    <Compile Include="Code\02_Modeling\03_ModelEvaluation\4_c_UniDirectional_LSTM_using_Pubmed_Embedding_with_CNTK_Backend.py" />
+    <Compile Include="Code\02_Modeling\03_ModelEvaluation\4_d_UniDirectional_LSTM_using_Google_Embedding_with_CNTK_Backend.py" />
+    <Compile Include="Code\02_Modeling\03_ModelEvaluation\4_e_Pubmed_BC5_UniDirectional_LSTM_with_CNTK_Backend.py" />
+    <Compile Include="Code\02_Modeling\03_ModelEvaluation\4_f_Pubmed_BC5_UniDirectional_LSTM_with_Tensorflow_Backend.py" />
+    <Compile Include="Code\03_Deployment\score.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aml_config\conda_dependencies.yml" />
+    <Content Include="aml_config\dl4nlp-cluster.compute" />
+    <Content Include="aml_config\dl4nlp-cluster.runconfig" />
+    <Content Include="aml_config\docker.compute" />
+    <Content Include="aml_config\docker.runconfig" />
+    <Content Include="aml_config\hackathon2017.compute" />
+    <Content Include="aml_config\hackathon2017.runconfig" />
+    <Content Include="aml_config\local.compute" />
+    <Content Include="aml_config\local.runconfig" />
+    <Content Include="aml_config\spark_dependencies.yml" />
+    <Content Include="Code\01_Data_Acquisition_and_Understanding\CLI_commands.txt" />
+    <Content Include="Code\01_Data_Acquisition_and_Understanding\ReadMe.md" />
+    <Content Include="Images\Architecture.PNG" />
+    <Content Include="Images\datasample.PNG" />
+    <Content Include="Images\D_a_D_model.png" />
+    <Content Include="Images\Evaluations.png" />
+    <Content Include="Images\Evaluation_Sample.PNG" />
+    <Content Include="Images\lstm cell.png" />
+    <Content Include="Images\mc1.PNG" />
+    <Content Include="Images\mc2.png" />
+    <Content Include="Images\mc3.png" />
+    <Content Include="Images\mc4.PNG" />
+    <Content Include="Images\mc5.PNG" />
+    <Content Include="Images\mc6.PNG" />
+    <Content Include="Images\NE.PNG" />
+    <Content Include="Images\nearesttocancer.PNG" />
+    <Content Include="Images\pca.PNG" />
+    <Content Include="Images\RNN_expanded.png" />
+    <Content Include="Images\Skip Gram.PNG" />
+    <Content Include="Images\tdsp-lifecycle.png" />
+    <Content Include="Images\tsne.PNG" />
+    <Content Include="Images\w2v_sim.PNG" />
+    <Content Include="Images\website.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="aml_config" />
+    <Folder Include="Code\" />
+    <Folder Include="Code\01_Data_Acquisition_and_Understanding" />
+    <Folder Include="Code\01_Data_Acquisition_and_Understanding\pubmed_parser" />
+    <Folder Include="Code\01_Data_Acquisition_and_Understanding\" />
+    <Folder Include="Code\01_Data_Acquisition_and_Understanding\pubmed_parser\" />
+    <Folder Include="Code\02_Modeling\" />
+    <Folder Include="Code\02_Modeling\01_FeatureEngineering\" />
+    <Folder Include="Code\02_Modeling\02_ModelCreation\" />
+    <Folder Include="Code\02_Modeling\03_ModelEvaluation\" />
+    <Folder Include="Code\03_Deployment" />
+    <Folder Include="Images" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|VisualStudio|Python 3.5" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
